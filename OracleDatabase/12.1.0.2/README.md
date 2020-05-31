@@ -25,7 +25,7 @@ A vagrant box that provisions Oracle Database automatically, using Vagrant, an O
 * All passwords are auto-generated and printed on install
 
 ## Resetting password
-You can reset the password of the Oracle database accounts (SYS, SYSTEM and PDBADMIN only) by by switching to the oracle user (`sudo su - oracle`), then executing `/home/oracle/setPassword.sh <Your new password>`.
+You can reset the password of the Oracle database accounts (SYS, SYSTEM and PDBADMIN only) by switching to the oracle user (`sudo su - oracle`), then executing `/home/oracle/setPassword.sh <Your new password>`.
 
 ## Running scripts after setup
 You can have the installer run scripts after setup by putting them in the `userscripts` directory below the directory where you have this file checked out. Any shell (`.sh`) or SQL (`.sql`) scripts you put in the `userscripts` directory will be executed by the installer after the database is set up and started. Only shell and SQL scripts will be executed; all other files will be ignored. These scripts are completely optional.
@@ -50,6 +50,8 @@ The following can be customized:
 * `ORACLE_PDB`: `ORCLPDB1`
 * `ORACLE_CHARACTERSET`: `AL32UTF8`
 * `ORACLE_EDITION`: `EE` | `SE2`
+* `LISTENER_PORT`: `1521` (edit the `LISTENER_PORT = 1521` line to customize)
+* `EM_EXPRESS_PORT`: `5500` (edit the `EM_EXPRESS_PORT = 5500` line to customize)
 * `ORACLE_PWD`: `auto generated`
 * `SYSTEM_TIMEZONE`: `automatically set (see below)`
   * The system time zone is used by the database for SYSDATE/SYSTIMESTAMP.
